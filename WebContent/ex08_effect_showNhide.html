@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<!-- jQuery CDN -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script type="text/javascript">
+	
+/* 
+
+* $(selector).show(speed), $(selector).hide(speed), $(selector).toggle(speed)
+	
+	- speed 숫자 (기본 400), 문자 (fast, slow) 지정
+
+*/
+	$(function() {
+		
+		// .hide()
+		$("#p1").click(function() {
+			$("#img").hide(300);
+		});
+		
+		// .show()
+		$("#p2").click(function() {
+			$("#img").show(300);
+		});
+		
+		// .toggle()
+		var i = 0;
+		$("#p3").click(function() {
+			if (i % 2 == 0) {
+				$(this).text("보이기");
+			} else {
+				$(this).text("감추기");
+			}
+			i++;
+			$("#img").toggle("250");
+		});
+	});
+	
+</script>
+
+</head>
+
+<body>
+	<button id="p1"> 감추기 </button>
+	<button id="p2"> 보이기 </button>
+	<button id="p3"> 토글 </button>
+	
+	<br><br><br>
+	
+	<img id="img" src="images/pic_bulboff.gif">
+</body>
+</html>

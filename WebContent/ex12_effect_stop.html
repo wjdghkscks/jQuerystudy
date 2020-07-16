@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<style type="text/css">
+	#panel, #flip {
+		padding: 5px;
+		font-size: 18px;
+		text-align: center;
+		background-color: pink;
+		color: white;
+		border: 1px solid #333;
+		border-radius: 3px;
+	}
+</style>
+
+<!-- jQuery CDN -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script type="text/javascript">
+
+	// .stop : slideDown, animate 등을 멈추는 기능
+
+	$(function() {
+		
+		$("#flip").click(function() {
+			$("#panel").animate({
+				height: '250px'
+			}, 5000);
+		})
+		
+		$("#stop").click(function() {
+			$("#panel").stop();
+		})
+		
+	})
+</script>
+
+</head>
+
+<body>
+	<button id="stop">STOP</button>
+	<br><br><br>
+	<div id="flip">START</div>
+	<div id="panel">Hello World</div>
+</body>
+</html>

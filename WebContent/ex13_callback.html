@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<!-- jQuery CDN -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script type="text/javascript">
+
+	// callback: 현재 효과가 완료되었을 때 실행할 기능
+	//	>>> $(selector).hide(speed, callback)
+	
+	$(function() {
+		
+		$("#p1").click(function() {
+			$("#img").hide("slow");
+			alert("숨김 작업을 진행했습니다.")
+		})
+		
+		$("#p2").click(function() {
+			$("#img").hide(3000, function() {
+				alert("숨김 작업이 끝났습니다. (callback)")
+			});
+		})
+		
+		$("#p3").click(function() {
+			$("img").toggle(2000, function() {
+				alert("이미지 이동을 완료했습니다. (callback)")
+			})
+		})
+	})
+</script>
+
+
+</head>
+<body>
+	<button id="p1"> callback 사용 X </button>
+	<button id="p2"> callback 사용 O </button>
+	<button id="p3"> 토글 </button>
+	
+	<br><br><br>
+	
+	<img id="img" src="images/pic_bulboff.gif">
+	<p>Hello World</p>
+</body>
+</html>

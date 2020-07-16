@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script type="text/javascript">
+
+/* 
+* 마우스 이벤트
+	- click ( = on, bind )
+	- dblclick
+	- mouseover( = mouseenter )
+	- mouseout( = mouseleave )
+	
+* 키보드 이벤트
+	- keypress
+	- keydown
+	- keyup
+	
+* form 이벤트
+	- submit
+	- change
+	- focus
+*/
+
+/*
+
+// 1. 클릭
+
+	1) .click
+	
+		$(function() {
+			$("#p1").click(function() {
+				alert("클릭 성공 1");
+			});
+		})
+		
+	2) .on()
+	
+		$(function() {
+			$("#p1").on("click", function() {
+				alert("클릭 성공 2")
+			});
+		})
+		
+	
+		
+	3) .bind()
+	
+		$(function() {
+			$("#p1").bind("click", function() {
+				alert("클릭 성공 3")
+			})
+		})
+	
+// 2. 더블 클릭
+	
+	$(function() {
+		$("#p1").dblclick(function() {
+			alert("클릭 성공4");
+		});
+	}) 
+
+
+// 3. mouse over, mouse enter, mouse out, mouse leave
+
+	1) .mouseover()
+		$(function() {
+			$("#p1").mouseover(function() {
+				alert("클릭 성공 5");
+			})
+		})
+		
+	2) .mouseenter()
+	
+		$(function() {
+			$("#p1").mouseenter(function() {
+				alert("클릭 성공 6");
+			})
+		})
+	
+	
+	3) .mouseout()
+	
+		$(function() {
+			$("#p1").mouseout(function() {
+				alert("클릭 성공 7");
+			})
+		})
+		
+	4) .mouseleave()
+	
+		$(function() {
+			$("#p1").mouseleave(function() {
+				alert("클릭 성공 8");
+			})
+		})
+		
+
+		$(function() {
+			$("#name").change(function() {
+				var name = $(this).val();
+				alert(name);
+			})
+		}) 
+*/
+
+		$(function() {
+			$("#img").mouseover(function() {
+				$(this).attr("src", "images/pic_bulbon.gif");
+			})
+		})
+		
+		$(function() {
+			$("#img").mouseout(function() {
+				$(this).attr("src", "images/pic_bulboff.gif");
+			})
+		})
+		
+	// 체크박스
+		$(function() {
+			$("#chk").change(function() {
+				if ($(this).is(":checked")) {
+					var str = $("#id").val();
+					$("#id2").val(str);
+				} else {
+					$("#id2").val("");
+				}
+			});
+		});
+
+	// 라디오 버튼
+		$(function() {
+			$(":radio").change(function() {
+				if($(this).is(":checked")) {
+					var str = $(":checked").val(); 
+					$("#res").val(str); 
+				}
+			})
+		})
+
+
+
+	$(function() {
+		$("#pwd2").keyup(function() {
+			if ( $("#pwd").val() == $("#pwd2").val() ) {
+				$("#s1").html("<b>일치</b>");
+			} else {
+				$("#s1").html("<b>불일치</b>");
+			}
+		})
+	})
+
+
+
+
+</script>
+
+</head>
+
+<body>
+
+	<p> <span id="p1"> 이벤트 처리 </span> </p>
+	<p> <img id="img" src="images/pic_bulboff.gif"> </p>
+	<p> <input id="name" type="text" name="name"> </p>
+	
+	<hr>
+	
+	<p><input type="text" name="id" id="id"></p>
+	<p><input type="checkbox" id="chk" >상동</p>
+	<p><input type="text" name="id2" id="id2"></p>
+	
+	<hr>
+	
+	<input type="radio" name="fruit" value="orange"> 오렌지
+	<input type="radio" name="fruit" value="apple">   사과
+	<input type="radio" name="fruit" value="banana"> 바나나
+	<p><input type="text" name="res" id="res"></p>
+	
+	<hr>
+	
+	<p> 비밀번호 :		<input type="password" name="pwd" id="pwd"> </p>
+	<p> 비밀번호 확인 :	<input type="password" name="pwd2" id="pwd2"> <span id="s1"></span> </p>
+	
+</body>
+</html>

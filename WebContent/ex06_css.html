@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta charset="UTF-8">
+<title>css</title>
+
+<style type="text/css">
+	.red {
+		background-color: #ee6655;
+	}
+	#box {
+		background-color: pink;
+		color: white;
+		width: 80px;
+		padding: 20px;
+		text-align: center;
+	}
+</style>
+
+<!-- jQuery CDN -->
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script type="text/javascript">
+	$(function() {
+		
+	// JavaScript 방식
+		document.getElementById("java").style.background="skyblue";
+		
+	// addClass() 방식
+		$("#jsp").addClass("red");
+		
+	// .css() 방식
+		// var k = $("선택자").css("속성");		(getter)
+		// $("선택자").css("속성", "값")		(setter) 
+		$("body>ul>ul>ul>li").css("background", "orange");
+		$("body>ul>ul>ul>li").css("color", "white");
+		
+		$("#box").click(function() {
+			$("#box").css("width", "+=200").css("height", "+=200");
+		})
+	});
+</script>
+
+<!-- JavaScript -->
+<script type="text/javascript">
+	
+</script>
+
+</head>
+
+<body>
+	<ul>
+		<li id="java">Java</li>
+		<li>Web</li>
+		<ul>
+			<li id="jsp">JSP</li>
+			<ul>
+				<li>EL</li>
+				<li>JSTL</li>
+			</ul>
+			<li>spring</li>
+		</ul>
+		<li>Android</li>
+	</ul>
+	
+	<hr>
+	
+	<div id="box">PUSH</div>
+	
+</body>
+</html>

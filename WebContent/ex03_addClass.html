@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>.addClass(className)</title>
+
+<style type="text/css">
+	.bg {
+		background-color: pink;
+	}
+	
+	.fg {
+		color: #aaa;
+	}
+	
+	.horizontal {
+		float: left;
+		list-style: none;
+		margin: 20px;
+	}
+</style>
+
+<!-- jQuery CDN -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script type="text/javascript">
+	// .addClass(className)
+	$(function() {
+		$("li").addClass("bg");
+		$(".s").addClass("fg");
+		$("#sp").addClass("fg");
+		$("ul>li").addClass("horizontal");	// 자식
+		$("ol li").addClass("horizontal");	// 자손
+	})
+</script>
+
+</head>
+<body>
+	<h2>
+		<ul id="menu01">
+			<li><u>Java</u></li>
+			<li>HTML & CSS</li>
+			<li class="s">servlet & JSP</li>
+			<li id="sp">spring</li>
+		</ul>
+		<ol id="menu02">
+			<li><u>Android</u></li>
+			<li>iPhone</li>
+			<li class="s">window <u>Phone</u></li>
+			<li id="mo">mobile</li>
+		</ol>
+	</h2>
+</body>
+</html>
