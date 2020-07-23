@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<style type="text/css">
+	.important { font-weight: bold; }
+	.pink { color: pink; }
+	.bg_tomato { background-color: tomato; }
+</style>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script type="text/javascript">
+	$(function() {
+		
+		/* CSS 적용
+		- $("선택자").addClass("클래스_이름")		: 선택된 요소에 클래스를 추가
+		- $("선택자").removeClass("클래스_이름")	: 선택된 요소에 클래스를 삭제
+		- $("선택자").toggleClass("클래스_이름")	: 선택된 요소에 클래스 추가/삭제 전환
+		- $("선택자").css("클래스_이름")			: 선택된 요소에 스타일 속성 설정/반환
+		*/
+		
+		$("#btn1").click(function() {
+			$("h1, h2").addClass("pink");
+			$("p").addClass("bg_tomato");
+			$("div").addClass("important pink bg_tomato");
+		})
+		
+		$("#btn2").click(function() {
+			$("h1, h2").removeClass("pink");
+			$("p").removeClass("bg_tomato");
+			$("div").removeClass("important pink bg_tomato");
+		})
+		
+		$("#btn3").click(function() {
+			$("h1, h2").toggleClass("pink");
+			$("p").toggleClass("bg_tomato");
+			$("div").toggleClass("important pink bg_tomato");
+		})
+		
+		$("#btn4").click(function() {
+			$("h1, h2").css("background", "#ccc");
+			$("p").css("font-size", "24px").css("color", "tomato");
+			$("div").css({"background" : "pink" , "width" : "200px" , "color" : "white"});
+		})
+		
+	})
+</script>
+
+</head>
+<body>
+
+	<h1> Heading 1 </h1>
+	<h2> Heading 2 </h2>
+
+	<p> 문단 태그 1 </p>
+	<p> 문단 태그 2 </p>
+
+	<div> 이것은 영역 태그 </div>
+	
+	<br>
+	
+	<button id="btn1">.addClass()</button>
+	<button id="btn2">.removeClass()</button>
+	<button id="btn3">.toggleClass()</button>
+	<button id="btn4">.css()</button>
+	
+</body>
+</html>
+	
+	
+	
+	
+	

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<meta charset="UTF-8">
+<title>delete elements</title>
+
+<style type="text/css">
+	div {
+		width: 400px;
+		height: 200px;
+		border: 1px solid black;
+		background: pink;
+		color: white;
+	}
+</style>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script type="text/javascript">
+	$(function() {
+		
+		/*
+		
+		- .remove()	: 선택한 요소 및 하위 요소를 제거
+		- .empty()	: 선택한 요소의 자식 요소를 제거 (초기화)
+		
+		*/
+		
+		// .remove();
+		$("#btn1").click(function() {
+			$("#div1").remove();
+		})
+		
+		// .empty();
+		$("#btn2").click(function() {
+			$("#div1").empty();
+		})
+		
+		// 
+		$("#btn3").click(function() {
+			$("p").remove(".test");
+		})
+		
+		// 
+		$("#btn4").click(function() {
+			$("p").remove(".test , .demo");
+		})
+		
+	})
+</script>
+
+</head>
+<body>
+
+	<div id="div1">
+		This is some text in the div.
+		
+		<hr>
+		
+		<p class="test"> (#test) This is a Paragraph_01 in the div. </p>
+		<p> This is a Paragraph_02 in the div. </p>
+		
+		<hr>
+		
+		<p class="test"> (#test) This is a Paragraph_03 in the div. </p>
+		<p class="demo"> (#demo) This is a Paragraph_04 in the div. </p>
+	</div>
+	
+	<br>
+	
+	<button id="btn1">remove() div</button>
+	<button id="btn2"> empty() div</button>
+	<button id="btn3">remove(#test) div</button>
+	<button id="btn4">remove(#test #demo) div</button>
+	
+</body>
+</html>

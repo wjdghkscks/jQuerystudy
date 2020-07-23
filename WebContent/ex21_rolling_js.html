@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<script type="text/javascript">
+
+	var news = [	"어도비, IBM·레드햇과 전략적 파트너십",
+					"소셜빈, 인플루언서 커머스 플랫폼 ‘핫트’ 투자 유치",
+					"네이버 '동네시장 장보기' 2분기 주문량 전년比 12.5배↑",
+					"네이버 '온라인 전통시장 장보기 서비스 주문량 1년새 15배'",
+					"네이버, 바이브 X 아티스트 멤버십 출시…아티스트·팬 유대감 강화",
+					"네이버 동네시장 장보기 주문량 1년새 15배 늘었다",					
+					"경기도 공공배달앱 화성·오산·파주서 시범 서비스"					];
+	var timer;
+	var index = 0;
+	
+	// 2초마다 뉴스를 변경하는 함수
+	function showNews() {
+		var div = document.getElementById("mydiv");
+		div.innerHTML = news[index++];
+		if (index == news.length) { index = 0; }
+	}
+	
+	function start_news() {
+		// 2초마다 뉴스 변경 
+		timer = setInterval(showNews , 2000);
+	}
+	
+	function stop_news() {
+		clearInterval(timer);
+	}
+	
+</script>
+
+</head>
+<body>
+
+	<div id="mydiv"></div>
+	<button onclick="start_news()">뉴스 보기</button>
+	<button onclick="stop_news()">뉴스 중지</button>
+
+</body>
+</html>

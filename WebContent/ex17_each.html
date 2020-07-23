@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<meta charset="UTF-8">
+<title>each</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script type="text/javascript">
+	$(function() {
+		
+		/* .each : 반복문 (for문)
+		
+		- 사용방법	>>> each(function(index/element){ 실행문 });
+		- 여러번 반복할 때, 현재 실행중인 요소 선택 시 this 를 사용
+		
+		*/
+		
+		// .each 를 사용하여 index 값 부여
+		$("p").each(function(index) {
+			$(this).attr({"id" : "para-" + index});
+		});
+		
+		$("#btn1").click(function() {
+			alert($("#para-1").text());
+		});
+		
+		$("#btn2").click(function() {
+			$("#para-4").text("Hello jQuery");
+		});
+		
+	})
+</script>
+
+</head>
+<body>
+
+	<p> 이것은 하나의 단락이다. </p>
+	<p> <b>첫번째</b> </p>
+	<p> 두번째 </p>
+	<p> 세번째 </p>
+	<p> 네번째 </p>
+	<p> 다섯번째 </p>
+	
+	<hr>
+	
+	<button id="btn1"> 동작 1 </button>
+	<button id="btn2"> 동작 2 </button>
+
+</body>
+</html>

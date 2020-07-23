@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<meta charset="UTF-8">
+<title>setInterval / marginLeft 를 이용한 애니메이션</title>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script type="text/javascript">
+	$(function() {
+		
+		var position = 0;
+		var timer;
+		
+		// 이미지 클릭 시 이동
+		$("#btn").click(function() {
+			timer = setInterval(() => {
+				position += 1;
+				$("img").css("marginLeft", position);
+			}, 100);
+		})
+		
+		// 이미지 클릭 시 멈춤
+		$("img").click(function() {
+			clearInterval(timer);
+		})
+		
+	})
+</script>
+
+</head>
+<body>
+
+	<p><button id="btn"> 이동 </button> </p>
+	
+	<div>
+		<img alt="penguin" src="images/penguin.gif">
+	</div>
+
+</body>
+</html>

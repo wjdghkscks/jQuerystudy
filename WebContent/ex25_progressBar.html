@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Progress Bar</title>
+
+<style type="text/css">
+
+	#div01 {
+		border: 2px solid gray;
+		margin: 10px;
+		width: 400px;
+	}
+	
+	#div02 {
+		background-color: pink;
+		height: 50px;
+		width: 0px;
+		border: 1px solid pink;
+	}
+	
+</style>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script type="text/javascript">
+	$(function() {
+		$("#btn").click(function() {
+			$("#div02").animate( 	
+								{width:"398px"}, 
+								{duration:3000,
+								 step:function(x){
+									$("#demo").text(Math.round(x * 100/398) + "%");}
+								});
+		})
+	})
+</script>
+
+</head>
+<body>
+
+	<p> <button id="btn">START!</button> </p>
+	
+	<div id="div01">
+		<div id="div02"></div>
+	</div>
+	
+	<p id="demo"></p>
+	
+</body>
+</html>

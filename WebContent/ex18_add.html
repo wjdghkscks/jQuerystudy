@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script type="text/javascript">
+	$(function() {
+		
+	/*  Add Element
+	- .append()		: 요소의 끝에 내용을 추가
+	- .prepend()	: 요소의 시작 부분에 내용을 추가
+	- .before()		: 요소의 앞에 내용을 삽입
+	- .after()		: 요소의 뒤에 내용을 삽입
+	*/
+		
+	// .append()
+		$("#btn1").click(function() {
+			$("p").append("<b>글자 추가 </b>");
+		})
+		
+	// .append()
+		$("#btn2").click(function() {
+			$("ol").append("<li>리스트 추가 </li>");
+		})
+		
+	// .prepend()
+		$("#btn3").click(function() {
+			$("p").prepend("<b>HELLO </b>");
+		})
+		
+	// .prepend()
+		$("#btn4").click(function() {
+			$("li").prepend("<li>HELLO </li>");
+		})
+		
+	// .before()
+		$("#btn5").click(function() {
+			$("p").before("<b>jQuery </b>");
+		})
+		
+	// .after()
+		$("#btn6").click(function() {
+			$("li").after("<li>jQuery2 </li>");
+		})
+		
+	})
+</script>
+</head>
+<body>
+
+	<p> 이것은 문단입니다. </p>
+	<p> 이것은 또다른 문단입니다. </p>
+	<p> 이것도 또다른 문단입니다. </p>
+
+	<ol>
+		<li> List item 01 </li>
+		<li> List item 02 </li>
+		<li> List item 03 </li>
+	</ol>
+	
+	<button id="btn1"> 	Append text 		</button>
+	<button id="btn2"> Append list items 	</button>
+	<button id="btn3"> 	Prepend text 		</button>
+	<button id="btn4"> Prepend list items 	</button>
+	<button id="btn5">	 	Before 			</button>
+	<button id="btn6"> 		After 			</button>
+	
+</body>
+</html>

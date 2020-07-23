@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<meta charset="UTF-8">
+<title>애니메이션2</title>
+
+<style type="text/css">
+	#img { position: absolute; }
+</style>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script type="text/javascript">
+	$(function() {
+		
+		// 버튼 클릭 시 이동
+		$("#btn1").click(function() {
+			// .animate({시작}, 끝)
+			$("#img").animate({left : "+=1000"}, 10000);
+		})
+		
+		// 버튼 클릭 시 멈춤
+		$("#btn2").click(function() {
+			$("#img").stop();
+		})
+		
+	})
+</script>
+
+</head>
+<body>
+
+	<p><button id="btn1"> 이동 </button> </p>
+	<p><button id="btn2"> 멈춤 </button> </p>
+	
+	<div id="img">
+		<img alt="penguin" src="images/penguin.gif">
+	</div>
+
+</body>
+</html>
